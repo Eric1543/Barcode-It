@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!-- This is based on DillingerLee's great template here:
+https://github.com/Team-Code/KA_Offline -->
+<html> 
+ <head>  
+    <title>Processing.JS inside Webpages: Template</title> 
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+  	<script src="https://cdn.jsdelivr.net/jsbarcode/3.5.1/JsBarcode.all.min.js"></script>
+</head>
+ 
+ <body>
+    <p align="center">
+		<svg id="barcode1"></svg>
+		</p>
+		<script>
+		JsBarcode("#barcode1", 123456789123, {
+		  fontSize: 40,
+		  background: "#4b8b7f",
+		  lineColor: "#ffffff",
+		  margin: 40
+		});
+		</script>
+		</p>
+		<p align="center">
+    <!--This draws the Canvas on the webpage -->
+      <canvas id="mycanvas"></canvas> 
+    </p>
+ 
+ <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
+ <script>
+
+  var sketchProc = function(processingInstance) {
+  with (processingInstance) {
+    size(800, 600);
+    frameRate(30);	
+	
+        
+// ProgramCodeGoesHere
+	
+	// Variable Declarations
+	var profits = [80, 15, 20, 25, 100, 35, 40];
+	var items = ["Painting1", "Painting2", "Painting3", "Painting4", "Painting5", "Painting6", "Painting7"];
+	background(0,0,0);	
+	var x = 10;
+	var spacing = 80;
+	width = 25;
+	textSize(20);
+	fill(255, 255, 0);
+  text("Profit Per Painting", 340, 40);
+  fill(255, 255, 255);
+  textSize(12);
+  fill(255, 255, 0);
+	text("$", 10, 300);
+	fill(255, 255, 255);
+	stroke(255, 255, 255);
+	line(80, 80, 80, 550);
+	line(80, 550, 700, 550);
+	var yLabels = [0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600];
+	var yLabelz = ["", "", 450, 400, 350, 300, 250, 200, 150, 100, 50, ,0];
+	var y = 0;
+
+	for(var i in yLabelz){
+		text(yLabelz[i], 50, y);
+		y+=50;
+	}
+	// text.rotate(-Math.PI()/2);
+	for(var key in profits){
+		var height = profits[key];
+		fill(255, 255, 0);
+		rect(x + spacing, 550-height, x+width, height);
+		fill(250, 250, 250);
+		text(items[key], spacing, 580);
+		spacing+=100;
+	}
+  }};
+  // Get the canvas that Processing-js will use
+
+  var canvas = document.getElementById("mycanvas");
+	var ctx = canvas.getContext("2d");
+  // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+
+  var processingInstance = new Processing(canvas, sketchProc);
+ 
+ </script>
+
+</body>
+
+</html>
