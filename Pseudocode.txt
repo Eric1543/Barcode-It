@@ -1,0 +1,35 @@
+To-dos
+
+Associate data/object with barcode
+Detect barcode with jquery
+Console.log Barcodes data
+Visualize data with canvas
+Save items into database
+Retrieve items from database
+
+Item objects
+	name
+	barcode id
+	category
+	purchase price
+	sale price
+	profit
+	quantity
+	number sold
+
+Graph data (Probably as bargraph)
+	Total sales
+	Sales by category
+	Total profits
+	Profits by category
+	Remaining inventory
+
+Pages
+	Splash
+		User Register / Login
+	Welcome Page
+		View Inventory
+		Add Item
+		Sell Item
+		
+	

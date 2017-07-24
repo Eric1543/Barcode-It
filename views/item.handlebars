@@ -1,0 +1,26 @@
+
+  <h1 class="text-center">Barcode-It!</h1>
+{{!--     <div id="commentArea">{{this.author}}
+      <br/>{{this.comment}}
+      <form method="POST" action="/" class="button-size" id="addComment">
+        <input type="text" name="author" id="authorInput" placeholder="Name"></input>
+        <textarea type="text" name="comment" id="commentInput" placeholder="Comment"></textarea>
+        <button type="submit">Post Comment<d/button>
+      </form>
+    </div> --}}
+  <table>
+    <th>Name</th><th>Type</th><th>Category</th><th>Barcode Id</th><th>Cost</th><th>Price</th><th>Profit</th><th>Quantity</th><th>Number Sold</th>
+    {{#each item}}
+        <tr id="theItem">
+          <td>{{this.name}}</td>
+          <td>{{this.type}}</td>
+          <td>{{this.category}}</td>
+          <td>{{this.barcodeId}}</td>
+          <td>{{this.cost}}</td>
+          <td>{{this.price}}</td>
+          <td>{{this.profit}}</td>
+          <td>{{this.quantity}}</td>
+          <td>{{this.numberSold}}</td>
+        </tr>
+    {{/each}}
+  </table>
